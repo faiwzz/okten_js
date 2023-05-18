@@ -16,10 +16,10 @@ arr1 = array => {
 }
 arr1(arr);
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
-par = text =>{document.write(`<p>${text}</p>`)};
+const par = text =>{document.write(`<p>${text}</p>`)};
 par('vasya');
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-list1 = element1 =>{
+const list1 = element1 =>{
     document.write(`<ul>
 <li>${element1}</li>
 <li>${element1}</li>
@@ -28,7 +28,7 @@ list1 = element1 =>{
 }
 list1('petya');
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
-list2 = (text, count) =>{
+const list2 = (text, count) =>{
     document.write(`<ul>`);
     for (let i = 0; i < count; i++) {
         document.write(`<li>${text}</li>`)
@@ -38,7 +38,7 @@ list2 = (text, count) =>{
 list2('disney', 4);
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 let smth = [2, 'tomas', false];
-list3 = prim =>{
+const list3 = prim =>{
     document.write(`<ul>`);
     for (let primElement of prim) {
         document.write(`<li>${primElement}</li>`);
@@ -62,7 +62,7 @@ let objects = [
         age: 14,
     }
 ];
-blocks = obj =>{
+const blocks = obj =>{
     for (let objElement of obj) {
         document.write(`<div>`);
         document.write(`<h3>${objElement.id}</h3>`);
@@ -74,7 +74,7 @@ blocks = obj =>{
 blocks(objects);
 // - створити функцію яка повертає найменше число з масиву
 let nums = [3, 10, 18, 51, 16, 2];
-small = num =>{
+const small = num =>{
     let min = num[0];
     for (let i = 0; i < num.length; i++) {
         if (min>num[i]){
@@ -86,7 +86,7 @@ small = num =>{
 console.log(small(nums));
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 let xd = [3, 4, 5];
-sum = array =>{
+const sum = array =>{
 let ss = 0;
     for (let s = 0; s < array.length; s++) {
         ss += array[s];
@@ -95,7 +95,7 @@ let ss = 0;
 }
 console.log(sum(xd));
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відповідних індексах
-swap = (arr, index1, index2) =>{
+const swap = (arr, index1, index2) =>{
     let a = arr[index1];
     arr[index1]=arr[index2];
     arr[index2]=a;
@@ -103,7 +103,7 @@ swap = (arr, index1, index2) =>{
 }
 console.log(swap([2, 4, 6, 8, 10, 12], 3, 0));
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
-exchange = (sumUAH, Value, nCurrency) =>{
+const exchange = (sumUAH, Value, nCurrency) =>{
     let money = 0;
     for (let i = 0; i < Value.length; i++) {
         if (Value[i].currency===nCurrency){
