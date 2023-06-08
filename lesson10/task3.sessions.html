@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task 3</title>
+</head>
+<body>
+
+
+
+
+<script>
+  // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час відвідування сторінки. Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html.
+  //         Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
+  let json = localStorage.getItem('sessions');
+  let sessions = json ? JSON.parse(json) : [];
+
+  for (let session of sessions) {
+    let box = document.createElement('div');
+    let date = document.createElement('div');
+    let time = document.createElement('div');
+    let dateObj = formatDate(session.date);
+    console.log(dateObj)
+    date.innerText = `Date: ${dateObj.YYYY} / ${dateObj.MM} / ${dateObj.DD}`;
+    time.innerText = `Time: ${dateObj.hh}:${dateObj.mm}:${dateObj.ss}`;
+    box.append(date, time);
+    document.body.appendChild(box);
+  }
+  function formatDate(date){
+    let dateObj = new Date(date);
+    let YYYY  = dateObj.getFullYear().toString();
+    let MM  = (dateObj.getMonth() + 1).toString();
+    let DD  = dateObj.getDate().toString();
+    let hh  = dateObj.getHours().toString();
+    let mm  = dateObj.getMinutes().toString();
+    let ss  = dateObj.getSeconds().toString();
+
+    return {
+      YYYY,
+      MM: MM.length < 2 ? `0${MM}` : MM,
+      DD: DD.length < 2 ? `0${DD}` : DD,
+      hh: hh.length < 2 ? `0${hh}` : hh,
+      mm: mm.length < 2 ? `0${mm}` : mm,
+      ss: ss.length < 2 ? `0${ss}` : ss,
+    }
+  }
+</script>
+</body>
+</html>

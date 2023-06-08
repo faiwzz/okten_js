@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task1</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<form name="info">
+    <label>Name:<input type="text" name="name"></label>
+    <br/>
+    <label>Surname:<input type="text" name="surname"></label>
+    <br/>
+    <label>Age:<input type="number" name="age"></label>
+    <br/>
+    <button>Confirm</button>
+</form>
+
+<script>
+    // Створити форму з трьома полями для name,surname,age та кнопкою.
+    // При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ.
+    // Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+    // ==========================
+    const form = document.info;
+    form.onsubmit = function (e) {
+        e.preventDefault();
+
+        let box = document.createElement('div');
+        let name = document.createElement('div');
+        let surname = document.createElement('div');
+        let age = document.createElement('div');
+
+        name.innerText = `Name: ${this.name.value}`
+        surname.innerText = `Surname: ${this.surname.value}`
+        age.innerText = `Age: ${this.age.value}`
+
+        this.name.value = '';
+        this.surname.value = '';
+        this.age.value = '';
+
+        box.append(name, surname, age);
+        document.body.appendChild(box);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task 5</title>
+  <style>
+  </style>
+</head>
+<body>
+
+<script>
+  // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+  const block = document.createElement('div');
+  const btn = document.createElement('button');
+
+  block.innerText = '- Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".,- Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".,- Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".';
+  btn.innerText = 'CLICK';
+  btn.onclick = () =>  block.style.display = 'none';
+  document.body.append(block, btn);
+</script>
+</body>
+</html>
