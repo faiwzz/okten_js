@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task1</title>
+    <style>
+        button{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1 class="list">List</h1>
+<div class="box"></div>
+<script>
+    // зробити файл users.html
+    // з ендпоінту http://jsonplaceholder.typicode.com/users отримати всіх користувачів
+    //     вивести їх id + name списком та додати посилання з href = user-details.html?id=XXX (замість ХХХ - айді юзера)
+    // при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача (всі 15 полів) отримана через додатковий запит
+    // (https://jsonplaceholder.typicode.com/users/XXX   ХХХ - айді користувача)
+fetch('http://jsonplaceholder.typicode.com/users')
+    .then((Response) => Response.json())
+    .then((value) => {
+        let pack = document.getElementsByClassName('box')[0];
+        for (const each of value) {
+            let div = document.createElement('div');
+            div.innerText = `${each.id} ${each.name}`;
+            pack.appendChild(div);
+            let button = document.createElement('button');
+            button.innerText = 'Info';
+            div.appendChild(button);
+
+            button.onclick = () =>{
+                location.href = `../lesson12/user-info.html?userId=${each.id}`;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

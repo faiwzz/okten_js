@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>info</title>
+</head>
+<body>
+<h1 class="list">List</h1>
+<div class="box"></div>
+<script>
+    // зробити файл users.html
+    // з ендпоінту http://jsonplaceholder.typicode.com/users отримати всіх користувачів
+    //     вивести їх id + name списком та додати посилання з href = user-details.html?id=XXX (замість ХХХ - айді юзера)
+    // при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача (всі 15 полів) отримана через додатковий запит
+    // (https://jsonplaceholder.typicode.com/users/XXX   ХХХ - айді користувача)
+    let url = new URL(location.href).searchParams.get('userId');
+    fetch(`https://jsonplaceholder.typicode.com/users/${url}`)
+    .then((Response) => Response.json())
+    .then((value) => {
+        console.log(value);
+        let block = document.getElementsByClassName('box')[0];
+        let ul = document.createElement('ul');
+        build(value,ul);
+        block.appendChild(ul);
+    });
+    function List(sth, v, parent){
+        let li = document.createElement('li');
+        li.innerHTML = `<b>${sth}:</b> ${v}`;
+        parent.appendChild(li);
+    }
+    function Ul(sth, obj, parent){
+        let li = document.createElement('li');
+        let ul = document.createElement('ul');
+        li.innerHTML = `<b>${sth}:</b>`;
+        parent.appendChild(li);
+        li.appendChild(ul);
+        build(obj, ul);
+    }
+
+    function build(obj, parent) {
+        for (const sth in obj) {
+            typeof obj[sth] === 'object'
+                ? Ul(sth, obj[sth], parent)
+                : List(sth, obj[sth], parent)
+        }
+    }
+</script>
+</body>
+</html>
