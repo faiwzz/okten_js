@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <title>User List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-image: url("wp3776013-foggy-forest-wallpapers.jpg");
+            background-size: cover;
+            font-family: 'Space Grotesk', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        .first, .second{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(198, 196, 210, 0.4);
+            width: 50vw;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .wrap1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button.posts{
+            background-color: darkgray;
+            border: solid 1px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+            color: black;
+            width: 90vw;
+            height: 35px;
+            transition: 1s;
+            font-size: 22px;
+        }
+        button.posts:hover{
+            cursor: pointer;
+            width: 60vw;
+            transition: 1s;
+        }
+        .wrap2, .wrap21{
+            height: 70vh;
+            width: 90vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        .post_box, .post_box2{
+            height: 35vh;
+            width: 18vw;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+            text-align: center;
+            background-color: rgba(217, 217, 217, 0.4);
+            margin: 5px;
+            padding: 10px;
+        }
+        button{
+            background-color: darkgray;
+            border: solid 1px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            color: black;
+            width: 200px;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!---->
+<div class="first">
+<div class="wrap1">
+<h1>USER INFO</h1>
+<div class="wrap"></div>
+</div>
+<a href="#second"><button class="posts">Posts of current user</button></a></div>
+<!---->
+<div class="second" id="second">
+<div class="wrap2"></div>
+    <div class="wrap21"></div>
+</div>
+<!---->
+<script src="user-details.js">
+</script>
+</body>
+</html>

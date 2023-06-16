@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-image: url("wp3776013-foggy-forest-wallpapers.jpg");
+            background-size: cover;
+            font-family: 'Space Grotesk', sans-serif;
+            height: 100%;
+            width: 100%;
+        }
+        .wrap1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(198, 196, 210, 0.4);
+            width: 50vw;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .wrap{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrap2{
+            width: 100vw;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        .comm_box{
+            width: 18vw;
+            height: 60vh;
+            font-size: 13px;
+            margin: 5px;
+            padding-left: 0;
+            padding-right: 5px;
+            background-color: rgba(198, 196, 210, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            transition: 2s;
+        }
+        .comm_box:hover{
+            width: 25vw;
+            bottom: 3px;
+            cursor: pointer;
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>POST INFO</h1>
+    <div class="wrap1"></div>
+</div>
+<div class="wrap2"></div>
+<script src="post_details.js"></script>
+</body>
+</html>
